@@ -1,67 +1,46 @@
-* {
-    font-family: sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@use "./global";
+@mixin size($size) {
+    width: $size;
+    height: $size;
 }
-
-body {
-    margin: 0;
-}
-
-input {
-    outline: none;
-    border-radius: 0.4rem;
-    border: 3px solid hsl(204, 100%, 57%);
-}
-
-button {
-    cursor: pointer;
-    outline: none;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.4rem;
-    background: hsl(204, 100%, 57%);
-    color: white;
-    transition: background 250ms ease;
-    &:hover {
-        background: hsl(204, 100%, 37%);
-    }
-}
-
 #wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    div {
-        // Target
-        width: clamp(5em, 100%, 50em);
+}
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+#content-container {
+    width: clamp(5em, 100%, 50em);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-        h1 {
-            margin: 1.4rem;
-            color: hsl(204, 100%, 57%);
-            border-bottom: 0.15rem solid hsla(0, 0%, 0%, 0.096);
-        }
+    button,
+    input {
+        text-align: center;
+        margin: 0.75rem;
+        padding: 1rem;
+        width: 100%;
+    }
 
+    #img {
+        // image container retain dom space when loading img
+        @include size(8rem);
         img {
-            transform: translateY(20%);
             user-select: none;
-            margin: 0;
-            padding: 0;
-            width: 8rem;
+            pointer-events: none;
+            @include size(8rem);
         }
+    }
 
-        * {
-            text-align: center;
-            margin: 0.45rem;
-            padding: 1rem;
-            width: 100%;
-        }
+    h1 {
+        user-select: none;
+        pointer-events: none;
+        margin: .45rem;
+        text-align: center;
+        color: hsl(204, 100%, 57%);
+        width: 100%;
     }
 }
