@@ -1,0 +1,20 @@
+{
+  "name": "scss-clamp-responsive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html --open --no-source-maps",
+    "build": "parcel build index.html --no-source-maps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^15.0.1",
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.32.12",
+    "typescript": "^4.2.4"
+  }
+}
